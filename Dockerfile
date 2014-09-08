@@ -23,6 +23,12 @@ RUN rm /etc/apt/sources.list.d/sid-sources.list
 RUN dpkg -i android-tools-*.deb
 
 
+# Set up insecure default key
+RUN mkdir -m 0750 /.android
+ADD files/insecure_shared_adbkey /.android/adbkey
+ADD files/insecure_shared_adbkey.pub /.android/adbkey.pub
+
+
 # Clean up
 WORKDIR /tmp
 RUN rm -rf /tmp/android
