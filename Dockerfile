@@ -3,7 +3,7 @@ MAINTAINER cocoon
 
 
 # install uiautomator wrapper
-pip install uiautomator
+RUN pip install uiautomator
 
 
 # install adb from android tools
