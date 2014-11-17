@@ -7,8 +7,8 @@ a docker image for uiautomator  ( python adb uiautomator on debian:wheezy)
 composition
 ========
 debian:wheezy
-	cocoon/python
-		cocoon/uiautomator
+	cocoon/base ( python (ansible ready))
+		cocoon/uiautomator ( adb + python uiautomator wrapper )
 
 
 
@@ -18,7 +18,7 @@ usage
 start the container
 
 ```
-sudo docker run --privileged -v /dev/bus/usb:/dev/bus/usb -ti  -P cocoon/uiautomator /bin/sh
+sudo docker run --privileged -v /dev/bus/usb:/dev/bus/usb -ti --rm -P  cocoon/uiautomator /bin/bash
 ```
 
 
@@ -34,9 +34,6 @@ e7f54be6	offline
 388897e5	offline
 
 # python
-eGenix PyRun 2.7.8 (release 2.0.1, default, Aug 26 2014, 11:43:05)
-[GCC 4.6.4]
-Thank you for using eGenix PyRun. Type "help" or "license" for details.
 
 >>> from uiautomator import Device
 >>> d = Device('e7f54be6')

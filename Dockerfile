@@ -1,4 +1,4 @@
-FROM cocoon/python
+FROM cocoon/base
 MAINTAINER cocoon
 
 # install uiautomator wrapper
@@ -35,8 +35,8 @@ RUN apt-get -y --purge remove wget unzip && \
     rm -rf /var/cache/apt/*
 
 # Expose default ADB port
-EXPOSE 5037
+#EXPOSE 5037
 
 # Start the server by default. This needs to run in a shell or Ctrl+C won't
 # work.
-CMD /usr/local/bin/adb -a -P 5037 fork-server server
+#CMD /usr/local/bin/adb -a -P 5037 fork-server server
